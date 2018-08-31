@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>CAKE SHOP -購入確認-</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+</head>
+<body>
+	<div class="alert alert-secondary" role="alert">
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<a href="index.html" class="logo"><b>CAKE&nbsp;SHOP</b></a>
+			</div>
+			<div class="col-sm-9 text-right">
+				<a href="user.html">ユーザ</a>さん
+				<a href="cart.html" class="cart-button"><b>商品購入</b></a>
+				<a href="login.html">ログイン</a>
+			</div>
+		</div>
+	</div>
+	<div class="admin-page">
+		<a href="administrationTop.html">管理者用</a>
+	</div>
+	<div class="buyConfirm-area shadow-lg p-3 mb-5 bg-light">
+		<h2 class="buyConfirm-top">購入確認</h2>
+		<form action="buyResult.html">
+			<table class="table table-secondary buyConfirm-table" align="center">
+				<thead>
+					<tr>
+						<th scope="col">商品名</th>
+						<th scope="col">単価</th>
+						<th scope="col">個数</th>
+						<th scope="col">小計</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>○○△△○○△△</td>
+						<td>×××円</td>
+						<td>１個</td>
+						<td>1234567890円</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td>△〇△〇△</td>
+						<td>■■■■円</td>
+						<td>５個</td>
+						<td>9999円</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td>普通配送</td>
+						<td></td>
+						<td></td>
+						<td>200円</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>合計</td>
+						<td>○○△△□□円</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 class="buyConfirm-delivery"><b>2000年01月01日</b> 発送到着予定です。</h3>
+			<div class="buyConfirm-button-position">
+				<input class="btn btn-info btn-lg buyConfirm-button" type="submit" value="購入">
+			</div>
+		</form>
+		<div class="back-button">
+			<a href="cart.html">戻る</a>
+		</div>
+	</div>
+</body>
+</html>

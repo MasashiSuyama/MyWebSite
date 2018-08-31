@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>CAKE SHOP -ホーム-</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+</head>
+<body>
+	<div class="alert alert-secondary" role="alert">
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<a href="index.html" class="logo"><b>CAKE&nbsp;SHOP</b></a>
+			</div>
+			<div class="col-sm-9 text-right">
+				<a href="user.html">ユーザ</a>さん
+				<a href="cart.html" class="cart-button"><b>商品購入</b></a>
+				<a href="login.html">ログイン</a>
+			</div>
+		</div>
+	</div>
+	<div class="admin-page">
+		<a href="administrationTop.html">管理者用</a>
+	</div>
+	<h1 class="index-top">～　CAKE&nbspSHOP&nbspへようこそ　～</h1>
+	<div class="alert alert-success" role="alert">
+		ログアウトしました。
+	</div>
+	<div class="popularityItem-area shadow-lg p-3 mb-5 bg-light">
+		<h2 class="popularityItem-title">人気ランキング</h2>
+		<div class="popularityItem row">
+			<div class="col-sm-4">
+				<h3 class="first-popularityItem">１位</h3>
+				<a href="item.html" class="item-topage">
+					<div class="popularityItem-photo">
+						<img src="image/1.png" alt="" width="162" height="129.6">
+						<h5 class="popularityItem-price text-center"><b>×××円</b></h5>
+					</div>
+					<div>
+						<h4 class="text-center">商品名○○</h4>
+					</div>
+				</a>
+			</div>
+			<div class="col-sm-4">
+				<h3 class="second-popularityItem">２位</h3>
+				<a href="item.html" class="item-topage">
+					<div class="popularityItem-photo">
+						<img src="image/1.png" alt="" width="162" height="129.6">
+						<h5 class="popularityItem-price text-center"><b>×××円</b></h5>
+					</div>
+					<div>
+						<h4 class="text-center">商品名○○</h4>
+					</div>
+				</a>
+			</div>
+			<div class="col-sm-4">
+				<h3 class="third-popularityItem">３位</h3>
+				<a href="item.html" class="item-topage">
+					<div class="popularityItem-photo">
+						<img src="image/1.png" alt="" width="162" height="129.6">
+						<h5 class="popularityItem-price text-center"><b>×××円</b></h5>
+					</div>
+					<div>
+						<h4 class="text-center">商品名○○</h4>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="search-area shadow-lg p-3 mb-5 bg-light">
+		<h3 class="text-center search-title">検索</h3>
+		<div class="search-form">
+			<form action="itemSearchResult.html">
+				<div class="form-group row">
+					<label for="item" class="col-sm-2 text-center">商品名</label>
+					<input type="text" class="form-control col-sm-9" id="item" placeholder="部分一致">
+				</div>
+				<div class="form-group row">
+					<label for="cost" class="col-sm-2 text-center">価格</label>
+					<input type="text" class="form-control col-sm-3" id="cost">
+					<p class="col-sm-1 text-right">円</p>
+					<p class="col-sm-1">～</p>
+					<input type="text" class="form-control col-sm-3" id="cost">
+					<p class="col-sm-1 text-right">円</p>
+				</div>
+				<div class="search-position">
+					<input type="submit" class="btn btn-primary search-button" value="検索">
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="recommendedItem-area shadow-lg p-3 mb-5 bg-light">
+		<h2 class="recommendedItem-title">おすすめ</h2>
+		<div class="recommendedItem row">
+			<div class="col-sm-4">
+				<div>
+				<a href="item.html" class="item-topage">
+					<div class="recommendedItem-photo">
+						<img src="image/1.png" alt="" width="150" height="120">
+						<h6 class="recommendedItem-price text-center"><b>×××円</b></h6>
+					</div>
+					<div>
+						<h5 class="text-center">商品名○○</h5>
+					</div>
+				</a>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div>
+				<a href="item.html" class="item-topage">
+					<div class="recommendedItem-photo">
+						<img src="image/1.png" alt="" width="150" height="120">
+						<h6 class="recommendedItem-price text-center"><b>×××円</b></h6>
+					</div>
+					<div>
+						<h5 class="text-center">商品名○○</h5>
+					</div>
+				</a>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div>
+				<a href="item.html" class="item-topage">
+					<div class="recommendedItem-photo">
+						<img src="image/1.png" alt="" width="150" height="120">
+						<h6 class="recommendedItem-price text-center"><b>×××円</b></h6>
+					</div>
+					<div>
+						<h5 class="text-center">商品名○○</h5>
+					</div>
+				</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

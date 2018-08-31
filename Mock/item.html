@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>CAKE SHOP -商品詳細-</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+</head>
+<body>
+	<div class="alert alert-secondary" role="alert">
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<a href="index.html" class="logo"><b>CAKE&nbsp;SHOP</b></a>
+			</div>
+			<div class="col-sm-9 text-right">
+				<a href="user.html">ユーザ</a>さん
+				<a href="cart.html" class="cart-button"><b>商品購入</b></a>
+				<a href="login.html">ログイン</a>
+			</div>
+		</div>
+	</div>
+	<div class="admin-page">
+		<a href="administrationTop.html">管理者用</a>
+	</div>
+	<div class="item-area shadow-lg p-3 mb-5 bg-light">
+		<h2 class="item-top">商品詳細</h2>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="itemDetail-photo">
+					<img src="image/1.png" alt="" width="380" height="304">
+				</div>
+				<div class="allergy-table-area shadow-lg p-3 mb-5 bg-warning">
+					<b>アレルギー表示</b> (●の付いているものを使用しています)
+					<table class="table table-light allergy-table text-center">
+						<thead>
+							<tr>
+								<th scope="col">卵</th>
+								<th scope="col">小麦</th>
+								<th scope="col">乳</th>
+								<th scope="col">その他</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>●</td>
+								<td>－</td>
+								<td>－</td>
+								<td>なし</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-7">
+						<div class="row">
+							<div class="col-sm-6 text-center">購入個数</div>
+							<div class="col-sm-4">
+								<select class="custom-select item-select-number">
+									<option value="1">１</option>
+									<option value="2">２</option>
+									<option value="3">３</option>
+									<option value="4">４</option>
+									<option value="5">５</option>
+									<option value="6">６</option>
+									<option value="7">７</option>
+									<option value="8">８</option>
+									<option value="9">９</option>
+									<option value="10">１０</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 text-center">
+						<form action="cart.html">
+							<input class="btn btn-success btn-lg" type="submit" value="購入する">
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<h2 class="itemDetail-name text-center">商品名〇○○</h2>
+				<h5>詳細○〇△△○〇△△○〇△△○〇△△○〇△△○〇△△○〇△△○〇△△</h5>
+				<h2 class="itemDetail-price"><b>(単価)　××××円</b></h2>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

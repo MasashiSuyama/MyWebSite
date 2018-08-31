@@ -1,0 +1,497 @@
+/* すぺでのページで適用 */
+body {
+	background-color: #fffff0;
+}
+.admin-page {
+	text-align: right;
+	margin-right: 20px;
+	font-size: 13px;
+}
+.back-button {
+	margin: 0 0 10px 8px;
+}
+.bottom-pagination {
+	margin: 20px 0 20px 0;
+}
+.cart-button {
+	font-size: 18px;
+	margin: 0 5px;
+	color: #ff7f50;
+}
+.cart-button:visit {
+	color: #ff7f50;
+}
+.cart-button:hover {
+	color: #f38050;
+	text-decoration: none;
+}
+.cart-button:active {
+	color: #f38050;
+}
+.clear {
+	clear: both;
+}
+.logo {
+	font-size: 20px;
+	color: #ff4500;
+}
+.logo:visit {
+	color: #ff4500;
+}
+.logo:hover {
+	color: #ff4500;
+	text-decoration: none;
+}
+.logo:active {
+	color: #ff4500;
+}
+.top-pagination {
+	margin: 20px 0 40px 0;
+}
+
+/* 個別のスタイル */
+/* administrationTop.html */
+.adminTop-area {
+	width: 1000px;
+	margin: 70px auto 0 auto;
+}
+.adminTop-button {
+	width: 600px;
+	height: 60px;
+	font-size: 20px;
+}
+.adminTop-button-area {
+	text-align: center;
+	margin: 40px 0 40px 0;
+}
+.adminTop-top {
+	text-align: center;
+	margin: 20px 0 20px 0;
+}
+
+/* buyConfirm.html */
+.buyConfirm-area {
+	width: 1000px;
+	margin: 70px auto 0 auto;
+}
+.buyConfirm-button {
+	width: 200px
+}
+.buyConfirm-button-position {
+	text-align: center;
+	margin-top: 40px;
+}
+.buyConfirm-delivery {
+	text-align: center;
+	color: blue;
+	margin-top: 40px;
+}
+.buyConfirm-table {
+	width: 900px;
+	text-align: center;
+	margin-top: 40px;
+}
+.buyConfirm-top {
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* buyDetail.html */
+.buyDetail-area {
+	width: 900px;
+	margin: 70px auto 0 auto;
+}
+.buyDetail-item-area {
+	margin-top: 20px;
+}
+.buyDetail-top {
+	text-align: center;
+	margin: 30px 0;
+}
+
+/* buyResult.html */
+.buyReselt-area {
+	width: 800px;
+	margin: 70px auto 0 auto;
+}
+.buyReselt-botton-area {
+	margin: 50px 0;
+}
+.buyReselt-top {
+	margin: 30px 0 60px 0;
+	text-align: center;
+}
+/* cart.html */
+.cart-area {
+	width: 1000px;
+	margin: 70px auto 0 auto;
+}
+.cart-table {
+	width: 800px;
+	text-align: center;
+	margin-top: 30px;
+}
+.cart-top {
+	margin: 20px 0;
+	text-align: center;
+}
+.cartItem-select-number {
+	width: 70px; 
+}
+.delivery-select {
+	width: 120px; 
+}
+.deliveryDate {
+	width: 200px;
+	margin: 0 auto 0 auto;
+}
+.deliveryDate-position {
+	text-align: center;
+}
+.delivery-top {
+	font-size: 14px;
+	line-height: 1;
+	margin-right: 30px;
+}
+
+/* index.html */
+.first-popularityItem {
+	color: gold;
+}
+.index-top {
+	margin-top: 30px;
+	text-align: center;
+}
+a.item-topage {
+	color: #202020;
+}
+.popularityItem {
+	margin: 10px 0 25px 0;
+}
+.popularityItem-area {
+	width: 1100px;
+	margin: 60px auto 0 auto;
+}
+.popularityItem-photo {
+	float: left;
+	margin-right: 10px; 
+}
+.popularityItem-price{
+	margin-top: 3px;
+	color: #ff8c00;
+}
+.popularityItem-title {
+	padding: 10px 0 10px 5px;
+}
+.recommendedItem {
+	margin: 10px 0 20px 0;
+}
+.recommendedItem-area {
+	width: 1000px;
+	margin: 70px auto;
+}
+.recommendedItem-photo {
+	float: left;
+	margin-right: 8px; 
+}
+.recommendedItem-price {
+	margin-top: 2px;
+	color: #ff8c00;
+}
+.recommendedItem-title {
+	padding: 10px 0 20px 0;
+}
+.search-area {
+	width: 700px;
+	margin: 70px auto;
+}
+.search-form {
+	padding: 40px 0;
+}
+.search-button {
+	width: 100px;
+	margin-top: 30px;
+}
+.search-position {
+	text-align: right;
+	margin-right: 30px;
+}
+.search-title {
+	padding-top: 20px;
+}
+.second-popularityItem {
+	color: silver;
+}
+.third-popularityItem {
+	color: #C47222;
+}
+
+/* item.html */
+.allergy-table {
+	width: 400px;
+	margin: 20px auto 20px auto;
+}
+.allergy-table-position {
+	text-align: center;
+}
+.item-area {
+	width: 1000px;
+	margin: 70px auto 0 auto;
+}
+.item-select-number {
+	width: 70px;
+}
+.item-top {	
+	text-align: center;
+	margin: 20px 0 40px 0;
+}
+.itemDetail-name {
+	margin: 5px 0 10px 0;
+}
+.itemDetail-photo {
+	text-align: center;
+	margin-bottom: 50px; 
+}
+.itemDetail-price {
+	margin-top: 50px;
+	text-align: center;
+	color: #ff4500;
+}
+
+/* itemSearchResult */
+.itemSeaechResult-area {
+	width: 1100px;
+	margin: 70px auto 0 auto;
+}
+.itemSeaechResult-photo {
+	text-align: center;
+	margin-bottom: 40px;
+}
+.itemSeaechResult-top {
+	margin: 30px 0 20px 0;
+	text-align: center;
+}
+
+/* login.html*/
+.login-area {
+	width: 650px;
+	margin: 70px auto 0 auto;
+}
+.login-button {
+	width: 150px;
+	margin: 10px 0 30px 0;
+}
+.login-input-area {
+	margin: 30px 0;
+}
+.login-position {
+	text-align: center;
+	margin-top: 30px;
+}
+.login-top {
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* newProduct.html */
+.newProduct-area {
+	width: 800px;
+	margin: 70px auto 0 auto;
+}
+.newProduct-getButton {
+	width: 150px;
+	margin: 10px 0 30px 0;
+}
+.newProduct-position {
+	text-align: center;
+	margin-top: 30px;
+}
+.newProduce-top {
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* newUser.html */
+.newUser-area {
+	width: 650px;
+	margin: 70px auto 0 auto;
+}
+.newUser-button {
+	width: 150px;
+	margin: 10px 0 30px 0;
+}
+.newUser-input-area {
+	margin: 50px 0 30px 0;
+}
+.newUser-position {
+	text-align: center;
+	margin-top: 30px;
+}
+.newUser-top {
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* product.html */
+.product-area {
+	width: 800px;
+	margin: 70px auto 0 auto;
+}
+.product-top {
+	text-align: center;
+	margin: 20px 0;
+}
+a.protectDelete-link {
+	color: #ff4500;
+}
+a.protectDelete-link:hover {
+	color: #dc451e;
+}
+a.protectUpdate-link {
+	color: #00b34c;
+}
+a.protectUpdate-link:hover {
+	color: #0f9030;
+}
+
+/* productList.html */
+.newProduct-button {
+	text-align: right;
+	margin-right: 30px;
+}
+.productList-area {
+	width: 1000px;
+	margin: 70px auto 0 auto;
+}
+.productList-top {
+	text-align: center;
+	margin: 20px 0;
+}
+.product-search-area {
+	margin: 30px 0 30px 0;
+}
+
+/* productSearchResult */
+.productSeaechResult-area {
+	width: 1100px;
+	margin: 70px auto 0 auto;
+}
+.productSeaechResult-photo {
+	text-align: center;
+	margin-bottom: 40px;
+}
+.productSeaechResult-top {
+	margin: 30px 0 20px 0;
+	text-align: center;
+}
+
+/* productUpdate.html */
+.productUpdete-area {
+	width: 800px;
+	margin: 70px auto 0 auto;
+}
+.productUpdate-getButton {
+	width: 150px;
+	margin: 10px 0 30px 0;
+}
+.productUpdete-input-area {
+	margin:50px 0 30px 0
+}
+.productUpdate-position {
+	text-align: center;
+	margin-top: 30px;
+}
+.productUpdete-top {
+	text-align: center;
+	margin: 20px 0;
+}
+/* user.html */
+.user-area {
+	width: 800px;
+	margin: 70px auto 0 auto;
+}
+.user-buyHistory {
+	margin-bottom: 13px;
+}
+a.userDelete-link {
+	color: #ff4500;
+}
+a.userDelete-link:hover {
+	color: #dc451e;
+}
+hr.user-line {
+	border-top: 1px groove;
+}
+.user-top {
+	text-align: center;
+	margin: 20px 0;
+}
+a.userUpdate-link {
+	color: #00b34c;
+}
+a.userUpdate-link:hover {
+	color: #0f9030;
+}
+
+/* userDelete.html */
+.userDelete-area{
+	width: 800px;
+	margin: 70px auto 0 auto;
+}
+.userDelete-button-area {
+	margin: 50px 0 40px 0;
+}
+.userDelete-choice-button {
+	width: 160px;
+}
+.userDelete-top {
+	text-align: center;
+	margin: 20px 0 60px 0;
+}
+
+/* userList.html */
+.user-search-area {
+	margin: 50px 0 30px 0;
+}
+.user-search-button {
+	width: 100px;
+	margin-top: 20px;
+}
+.user-search-position {
+	text-align: right;
+	margin-right: 30px;
+}
+.userList-area {
+	width: 1000px;
+	margin: 70px auto 0 auto;
+}
+hr.userList-line {
+	height: 10px;
+	border-top: 1px groove;
+}
+.userList-top {
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* userUpdate.html */
+.userUpdate-area {
+	width: 800px;
+	margin: 70px auto 0 auto;
+}
+.userUpdate-button {
+	width: 150px;
+	margin: 10px 0 30px 0;
+}
+.userUpdate-input-area {
+	margin-top: 40px;
+}
+.userUpdate-position {
+	text-align: center;
+	margin-top: 35px;
+}
+.userUpdate-top {
+	text-align: center;
+	margin: 20px 0 20px 0;
+}
+	

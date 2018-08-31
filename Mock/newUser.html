@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>CAKE SHOP -ユーザ新規登録-</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+</head>
+<body>
+	<div class="alert alert-secondary" role="alert">
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<a href="index.html" class="logo"><b>CAKE&nbsp;SHOP</b></a>
+			</div>
+			<div class="col-sm-9 text-right">
+				<a href="user.html">ユーザ</a>さん
+				<a href="cart.html" class="cart-button"><b>商品購入</b></a>
+				<a href="login.html">ログイン</a>
+			</div>
+		</div>
+	</div>
+	<div class="admin-page">
+		<a href="administrationTop.html">管理者用</a>
+	</div>
+	<div class="newUser-area shadow-lg p-3 mb-5 bg-light">
+		<h2 class="newUser-top">ユーザ新規登録</h2>
+		<div class="alert alert-danger" role="alert">
+			入力された内容は正しくありません。
+		</div>
+		<form action="index.html">
+			<div class="newUser-input-area">
+				<div class="form-group row">
+					<label for="loginId" class="col-sm-4 text-center">ログインID</label>
+					<input type="text" class="form-control col-sm-7" id="loginId">
+				</div>
+				<div class="form-group row">
+					<label for="userName" class="col-sm-4 text-center">ユーザー名</label>
+					<input type="text" class="form-control col-sm-7" id="userName">
+				</div>
+				<div class="form-group row">
+					<label for="birthdate" class="col-sm-4 text-center">生年月日</label>
+					<input type="date" id="birthdate" class="form-control col-sm-7">
+				</div>
+				<div class="form-group row">
+					<label for="password" class="col-sm-4 text-center">パスワード</label>
+					<input type="text" class="form-control col-sm-7" id="password">
+				</div>
+				<div class="form-group row">
+					<label for="passwordCheck" class="col-sm-4 text-center">パスワード(確認)</label>
+					<input type="password" class="form-control col-sm-7" id="passwordCheck">
+				</div>
+			</div>
+			<div class="newUser-position">
+				<input type="submit" class="btn btn-secondary btn-lg newUser-button" value="新規登録">
+			</div>
+		</form>
+		<div class="back-button">
+			<a href="login.html">戻る</a>
+		</div>
+	</div>
+</body>
+</html>

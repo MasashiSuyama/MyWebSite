@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>CAKE SHOP -ユーザ詳細-</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+</head>
+<body>
+	<div class="alert alert-secondary" role="alert">
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<a href="index.html" class="logo"><b>CAKE&nbsp;SHOP</b></a>
+			</div>
+			<div class="col-sm-9 text-right">
+				<a href="user.html">ユーザ</a>さん
+				<a href="cart.html" class="cart-button"><b>商品購入</b></a>
+				<a href="login.html">ログイン</a>
+			</div>
+		</div>
+	</div>
+	<div class="admin-page">
+		<a href="administrationTop.html">管理者用</a>
+	</div>
+	<div class="user-area shadow-lg p-3 mb-5 bg-light">
+		<h2 class="user-top">ユーザ詳細</h2>
+		<div class="row">
+			<div class="col-sm-11 text-right">
+				<a href="userUpdate.html" class="userUpdate-link"><b>情報更新</b></a>
+			</div>
+			<div class="col-sm-1">
+				<a href="userDelete.html" class="userDelete-link"><b>削除</b></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-7 text-center">
+				<p><b>ログインID</b></p>
+			</div>
+			<div class="col-sm-5"><p>aaa</p></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-7 text-center">
+				<p><b>ユーザ名</b></p>
+			</div>
+			<div class="col-sm-5"><p>AAA</p></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-7 text-center">
+				<p><b>生年月日</b></p>
+			</div>
+			<div class="col-sm-5"><p>2000年01月01日</p></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-7 text-center">
+				<p><b>登録日時</b></p>
+			</div>
+			<div class="col-sm-5"><p>2222年22月22日 22:22</p></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-7 text-center">
+				<p><b>更新日時</b></p>
+			</div>
+			<div class="col-sm-5"><p>2222年22月22日 22:22</p></div>
+		</div>
+		<hr class="user-line">
+		<div class="col-sm-3 text-center">
+			<h4 class="user-buyHistory">購入履歴</h4>
+		</div>
+		<div class="row">
+			<div class="col-sm-10 offset-sm-1">
+				<table class="table text-center">
+					<thead>
+						<tr>
+							<th scope="col">購入日時</th>
+							<th scope="col">配達予定日</th>
+							<th scope="col">合計金額</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>2000年01月01日</td>
+							<td>2000年01月01日</td>
+							<td>9999円</td>
+							<td>
+								<form action="buyDetail.html">
+									<input class="btn btn-info" type="submit" value="詳細">
+								</form>
+							</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td>1234年01月01日</td>
+							<td>1234年01月01日</td>
+							<td>1234567890円</td>
+							<td>
+								<form action="buyDetail.html">
+									<input class="btn btn-info" type="submit" value="詳細">
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

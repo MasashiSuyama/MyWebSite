@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>CAKE SHOP -買い物かご-</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+</head>
+<body>
+	<div class="alert alert-secondary" role="alert">
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<a href="index.html" class="logo"><b>CAKE&nbsp;SHOP</b></a>
+			</div>
+			<div class="col-sm-9 text-right">
+				<a href="user.html">ユーザ</a>さん
+				<a href="cart.html" class="cart-button"><b>商品購入</b></a>
+				<a href="login.html">ログイン</a>
+			</div>
+		</div>
+	</div>
+	<div class="admin-page">
+		<a href="administrationTop.html">管理者用</a>
+	</div>
+	<div class="buyConfirm-area shadow-lg p-3 mb-5 bg-light">
+		<h2 class="buyConfirm-top">買い物かご</h2>
+		<div class="alert alert-success" role="alert">
+		商品を追加しました。
+	</div>
+		<form action="buyConfirm.html">
+			<table class="table table-secondary buyConfirm-table" align="center">
+				<thead>
+					<tr>
+						<th scope="col">商品名</th>
+						<th scope="col">個数</th>
+						<th scope="col">単価</th>
+						<th scope="col" width="10%">削除</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>○○△△○○△△</td>
+						<td>
+							<select class="custom-select item-select-number">
+								<option value="1">１</option>
+								<option value="2">２</option>
+								<option value="3">３</option>
+								<option value="4">４</option>
+								<option value="5">５</option>
+								<option value="6">６</option>
+								<option value="7">７</option>
+								<option value="8">８</option>
+								<option value="9">９</option>
+								<option value="10">１０</option>
+							</select>
+						</td>
+						<td>×××円</td>
+						<td width="10%">
+							<input type="checkbox" class="form-check-input">
+						</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td>○○△△○○△△</td>
+						<td>
+							<select class="custom-select item-select-number">
+								<option value="1">１</option>
+								<option value="2">２</option>
+								<option value="3">３</option>
+								<option value="4">４</option>
+								<option value="5">５</option>
+								<option value="6">６</option>
+								<option value="7">７</option>
+								<option value="8">８</option>
+								<option value="9">９</option>
+								<option value="10">１０</option>
+							</select>
+						</td>
+						<td>×××円</td>
+						<td width="10%">
+							<input type="checkbox" class="form-check-input">
+						</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td>日時指定配送</td>
+						<td>
+							<input type="date" value="2000-01-01" min="2000-01-01" max="2000-01-14"></input>
+						</td>
+						<td>200円 (5000円以上で無料)</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="buyConfirm-button-position">
+				<input class="btn btn-info btn-lg buyConfirm-button" type="submit" value="購入確認">
+			</div>
+		</form>
+		<div class="back-button">
+			<a href="index.html">戻る</a>
+		</div>
+	</div>
+</body>
+</html>
