@@ -18,15 +18,15 @@
 			<div class="newUser-input-area">
 				<div class="form-group row">
 					<label for="loginId" class="col-sm-4 text-center">ログインID</label>
-					<input type="text" name="loginId" class="form-control col-sm-7" id="loginId" pattern="^[0-9A-Za-z]+$">
+					<input type="text" name="loginId" class="form-control col-sm-7" id="loginId" pattern="^[0-9A-Za-z]+$" value="${loginId}">
 				</div>
 				<div class="form-group row">
 					<label for="userName" class="col-sm-4 text-center">ユーザー名</label>
-					<input type="text" name="name" class="form-control col-sm-7" id="userName">
+					<input type="text" name="name" class="form-control col-sm-7" id="userName" value="${userName}">
 				</div>
 				<div class="form-group row">
 					<label for="birthdate" class="col-sm-4 text-center">生年月日</label>
-					<input type="date" name="birthdate" id="birthdate" class="form-control col-sm-7" min="1900-01-01" max="${today}">
+					<input type="date" name="birthdate" id="birthdate" class="form-control col-sm-7" min="1900-01-01" max="${today}" value="${birthday}">
 				</div>
 				<div class="form-group row">
 					<label for="password" class="col-sm-4 text-center">パスワード</label>

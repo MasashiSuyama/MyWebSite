@@ -31,7 +31,7 @@ public class UserSearchResult extends HttpServlet {
 			UserDataBeans udb =(UserDataBeans)session.getAttribute("userInfo");
 			if(udb == null || !( udb.getLoginId().equals("admin") )) {
 				// セッションにリターンページ情報を書き込む
-				session.setAttribute("returnStrUrl", "UserList");
+				session.setAttribute("returnStrUrl", "UserSearchResult");
 				// ログイン画面にリダイレクト
 				response.sendRedirect("Login");
 				return;

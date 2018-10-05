@@ -16,15 +16,18 @@ public class BuyDAO {
 	/**
      * ユーザーidが一致する全ての購入履歴情報を取得する
      */
-	public ArrayList<BuyDataBeans> findBuyDataAll(int user_id) throws SQLException {
+	public ArrayList<BuyDataBeans> findBuyData(int userId, int pageNum, int pageMaxBuyDetailCount) throws SQLException {
 		Connection con = null;
 		PreparedStatement st = null;
 		try {
+			int startBuyDetailNum = (pageNum - 1) * pageMaxBuyDetailCount;
 			con = DBManager.getConnection();
 
 			st = con.prepareStatement(
-					"SELECT * FROM buy WHERE user_id = ? ORDER BY id DESC");
-			st.setInt(1, user_id);
+					"SELECT * FROM buy WHERE user_id = ? ORDER BY id DESC LIMIT ?,?");
+			st.setInt(1, userId);
+			st.setInt(2, startBuyDetailNum);
+			st.setInt(3, pageMaxBuyDetailCount);
 
 			ResultSet rs = st.executeQuery();
 
@@ -41,6 +44,32 @@ public class BuyDAO {
 			}
 			return bdbList;
 		} catch (SQLException e) {
+			throw new SQLException(e);
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+	}
+
+	/**
+	 * ユーザidが一致する全購入履歴数を取得
+	 */
+	public static double getBuyAll(int userId) throws SQLException {
+		Connection con = null;
+		PreparedStatement st = null;
+		try {
+			con = DBManager.getConnection();
+			st = con.prepareStatement("select count(*) as cnt from buy WHERE user_id = ?");
+			st.setInt(1, userId);
+			ResultSet rs = st.executeQuery();
+
+			double buyAll = 0;
+			while (rs.next()) {
+				buyAll = Double.parseDouble(rs.getString("cnt"));
+			}
+			return buyAll;
+		} catch (Exception e) {
 			throw new SQLException(e);
 		} finally {
 			if (con != null) {

@@ -81,6 +81,49 @@
 				</table>
 			</div>
 		</div>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<c:if test="${pageNum == 1}">
+					<li class="page-item disabled">
+						<a class="page-link" tabindex="-1"><<</a>
+					</li>
+				</c:if>
+				<c:if test="${!(pageNum == 1)}">
+					<li class="page-item">
+						<a class="page-link" href="UserData?id=${userData.id}"><<</a>
+					</li>
+				</c:if>
+
+				<c:if test="${pageNum == pageMax && pageMax >= 3}">
+					<li class="page-item"><a class="page-link" href="UserData?id=${userData.id}&page_num=${pageNum - 2}">${pageNum - 2}</a></li>
+				</c:if>
+				<c:if test="${!(pageNum == 1)}">
+					<li class="page-item"><a class="page-link" href="UserData?id=${userData.id}&page_num=${pageNum - 1}">${pageNum - 1}</a></li>
+				</c:if>
+
+				<li class="page-item active">
+					<a class="page-link">${pageNum}<span class="sr-only">(current)</span></a>
+				</li>
+
+				<c:if test="${!(pageNum == pageMax) && !(buyAll == 0)}">
+					<li class="page-item"><a class="page-link" href="UserData?id=${userData.id}&page_num=${pageNum + 1}">${pageNum + 1}</a></li>
+				</c:if>
+				<c:if test="${pageNum == 1 &&  pageMax >= 3}">
+					<li class="page-item"><a class="page-link" href="UserDat?id=${userData.id}&page_num=${pageNum + 2}">${pageNum + 2}</a></li>
+				</c:if>
+
+				<c:if test="${pageNum == pageMax || buyAll == 0}">
+					<li class="page-item disabled">
+						<a class="page-link" tabindex="-1">>></a>
+					</li>
+				</c:if>
+				<c:if test="${!(pageNum == pageMax) && !(buyAll == 0)}">
+					<li class="page-item">
+						<a class="page-link" href="UserData?id=${userData.id}&page_num=${pageMax}">>></a>
+					</li>
+				</c:if>
+			</ul>
+		</nav>
 	</div>
 </body>
 </html>

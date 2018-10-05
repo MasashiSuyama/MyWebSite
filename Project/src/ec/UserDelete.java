@@ -28,6 +28,17 @@ public class UserDelete extends HttpServlet {
 			String id_str = request.getParameter("id");
 			int id = Integer.parseInt(id_str);
 
+			// idの一致するユーザまたは管理者としてログインセッションがない場合、ログイン画面にリダイレクトさせる
+			UserDataBeans loginUdb =(UserDataBeans)session.getAttribute("userInfo");
+			if(loginUdb == null || !(loginUdb.getLoginId().equals("admin") || loginUdb.getId() == id) ) {
+				// セッションにリターンページ情報を書き込む
+				session.setAttribute("returnStrUrl", "UserDelete");
+				// ログイン画面にリダイレクト
+				response.sendRedirect("Login");
+				return;
+			}
+
+
 			//idを引数にして、idに紐づくユーザ情報を出力する
 			UserDAO userDao = new UserDAO();
 			UserDataBeans udb = userDao.findUserInfo(id);

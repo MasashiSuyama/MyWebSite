@@ -23,8 +23,8 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>${bdb.buyDate}</td>
-							<td>${bdb.arrivalDate}</td>
+							<td>${bdb.buyDateStr}</td>
+							<td>${bdb.arrivalDateStr}</td>
 							<td>${bdb.totalPrice}円</td>
 						</tr>
 					</tbody>

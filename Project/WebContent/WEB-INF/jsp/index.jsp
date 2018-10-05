@@ -43,7 +43,7 @@
 	<div class="search-area shadow-lg p-3 mb-5 bg-light">
 		<h3 class="text-center search-title">検索</h3>
 		<div class="search-form">
-			<form action="ItemSearchResult" method="post">
+			<form action="ItemSearchResult">
 				<div class="form-group row">
 					<label for="item" class="col-sm-2 text-center">商品名</label>
 					<input type="text" name="search_itemName" class="form-control col-sm-9" id="item" placeholder="部分一致">

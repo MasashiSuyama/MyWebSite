@@ -22,15 +22,15 @@
 					</c:if>
 					<c:if test="${!(pageNum == 1)}">
 						<li class="page-item">
-							<a class="page-link" href="ProductList"><<</a>
+							<a class="page-link" href="ItemSearchResult"><<</a>
 						</li>
 					</c:if>
 
 					<c:if test="${pageNum == pageMax && pageMax >= 3}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum - 2}">${pageNum - 2}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum - 2}">${pageNum - 2}</a></li>
 					</c:if>
 					<c:if test="${!(pageNum == 1)}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum - 1}">${pageNum - 1}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum - 1}">${pageNum - 1}</a></li>
 					</c:if>
 
 					<li class="page-item active">
@@ -38,10 +38,10 @@
 					</li>
 
 					<c:if test="${!(pageNum == pageMax) && !(itemCount == 0)}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum + 1}">${pageNum + 1}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum + 1}">${pageNum + 1}</a></li>
 					</c:if>
 					<c:if test="${pageNum == 1 &&  pageMax >= 3}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum + 2}">${pageNum + 2}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum + 2}">${pageNum + 2}</a></li>
 					</c:if>
 
 					<c:if test="${pageNum == pageMax || itemCount == 0}">
@@ -51,7 +51,7 @@
 					</c:if>
 					<c:if test="${!(pageNum == pageMax) && !(itemCount == 0)}">
 						<li class="page-item">
-							<a class="page-link" href="ProductList?page_num=${pageMax}">>></a>
+							<a class="page-link" href="ItemSearchResult?page_num=${pageMax}">>></a>
 						</li>
 					</c:if>
 				</ul>

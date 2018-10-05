@@ -23,7 +23,7 @@ public class ItemSearchResult extends HttpServlet {
 	//1ページに表示する商品数
 	final static int PAGE_MAX_ITEM_COUNT = 9;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 文字化け対策
 		request.setCharacterEncoding("UTF-8");
 

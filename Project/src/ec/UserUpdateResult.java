@@ -25,15 +25,26 @@ public class UserUpdateResult extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		try {
+			// URLからGETパラメータとしてIDを受け取る
+			String id_str = request.getParameter("id");
+			int id = Integer.parseInt(id_str);
+
+
+			// idの一致するユーザまたは管理者としてログインセッションがない場合、ログイン画面にリダイレクトさせる
+			UserDataBeans loginUdb =(UserDataBeans)session.getAttribute("userInfo");
+			if(loginUdb == null || !(loginUdb.getLoginId().equals("admin") || loginUdb.getId() == id) ) {
+				// セッションにリターンページ情報を書き込む
+				session.setAttribute("returnStrUrl", "UserUpdateResult");
+				// ログイン画面にリダイレクト
+				response.sendRedirect("Login");
+				return;
+			}
+
 			// リクエストパラメータの入力項目を取得
 			String userName = request.getParameter("userName");
 			String birthdate = request.getParameter("birthdate");
 			String password = request.getParameter("password");
 			String passwordCheck = request.getParameter("passwordCheck");
-
-			// URLからGETパラメータとしてIDを受け取る
-			String id_str = request.getParameter("id");
-			int id =Integer.parseInt(id_str);
 
 			/** 登録できない場合 **/
 			if (password.equals("") || passwordCheck.equals("") || userName.equals("") || birthdate.equals("")) {
@@ -46,11 +57,8 @@ public class UserUpdateResult extends HttpServlet {
 
 				//入力されているユーザ情報を保持する
 				udb.setName(userName);
-System.out.println(udb.getBirthDate());
 				Date date = Date.valueOf(birthdate);
 				udb.setBirthDate(date);
-
-System.out.println(udb.getBirthDate());
 
 				//ユーザ情報をリクエストスコープにセット
 				request.setAttribute("userUpdate", udb);
@@ -64,6 +72,17 @@ System.out.println(udb.getBirthDate());
 				// リクエストスコープにエラーメッセージをセット
 				request.setAttribute("UserUpdateErrMsg", "パスワードが正しくありません。");
 
+				//idを引数にして、idに紐づくユーザ情報を出力する
+				UserDAO userDao = new UserDAO();
+				UserDataBeans udb = userDao.findUserInfo(id);
+
+				//入力されているユーザ情報を保持する
+				udb.setName(userName);
+				Date date = Date.valueOf(birthdate);
+				udb.setBirthDate(date);
+
+				//ユーザ情報をリクエストスコープにセット
+
 				// ユーザ新規登録jspにフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userUpdate.jsp");
 				dispatcher.forward(request, response);
@@ -73,6 +92,13 @@ System.out.println(udb.getBirthDate());
 			//idに紐づくユーザ情報を更新する
 			UserDAO userDao = new UserDAO();
 			userDao.UserUpdate(id, userName, birthdate, password);
+
+			// 管理者としてログイン	してた場合
+			if(loginUdb.getLoginId().equals("admin")) {
+				// ユーザ一覧のサーブレットにリダイレクト
+				response.sendRedirect("UserList");
+				return;
+			}
 
 			//idを引数にして、idに紐づくユーザ情報を出力する
 			UserDataBeans udb = userDao.findUserInfo(id);

@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="error-button-area">
-			<a href="index.html">
+			<a href="Index">
 				<input type="submit" class="btn btn-primary error-botton" value="トップページ　へ">
 			</a>
 		</div>

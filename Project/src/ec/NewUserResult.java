@@ -40,6 +40,11 @@ public class NewUserResult extends HttpServlet {
 				// リクエストスコープにエラーメッセージをセット
 				request.setAttribute("newUserErrMsg", "入力されていない項目があります");
 
+				// リクエストスコープに入力内容をセット
+				request.setAttribute("loginId", loginId);
+				request.setAttribute("userName", userName);
+				request.setAttribute("birthday", birthday);
+
 				// ユーザ新規登録jspにフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newUser.jsp");
 				dispatcher.forward(request, response);
@@ -49,6 +54,11 @@ public class NewUserResult extends HttpServlet {
 				// リクエストスコープにエラーメッセージをセット
 				request.setAttribute("newUserErrMsg", "そのログインIDは使われています");
 
+				// リクエストスコープに入力内容をセット
+				request.setAttribute("loginId", loginId);
+				request.setAttribute("userName", userName);
+				request.setAttribute("birthday", birthday);
+
 				// ユーザ新規登録jspにフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newUser.jsp");
 				dispatcher.forward(request, response);
@@ -57,6 +67,11 @@ public class NewUserResult extends HttpServlet {
 			if ( !(password.equals(passwordCheck)) ) {
 				// リクエストスコープにエラーメッセージをセット
 				request.setAttribute("newUserErrMsg", "パスワードが正しくありません。");
+
+				// リクエストスコープに入力内容をセット
+				request.setAttribute("loginId", loginId);
+				request.setAttribute("userName", userName);
+				request.setAttribute("birthday", birthday);
 
 				// ユーザ新規登録jspにフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newUser.jsp");
