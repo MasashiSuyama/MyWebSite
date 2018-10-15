@@ -109,7 +109,7 @@
 					<li class="page-item"><a class="page-link" href="UserData?id=${userData.id}&page_num=${pageNum + 1}">${pageNum + 1}</a></li>
 				</c:if>
 				<c:if test="${pageNum == 1 &&  pageMax >= 3}">
-					<li class="page-item"><a class="page-link" href="UserDat?id=${userData.id}&page_num=${pageNum + 2}">${pageNum + 2}</a></li>
+					<li class="page-item"><a class="page-link" href="UserData?id=${userData.id}&page_num=${pageNum + 2}">${pageNum + 2}</a></li>
 				</c:if>
 
 				<c:if test="${pageNum == pageMax || buyAll == 0}">

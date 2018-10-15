@@ -11,6 +11,9 @@
 	<jsp:include page="/baselayout/header.jsp"/>
 	<div class="item-area shadow-lg p-3 mb-5 bg-light">
 		<h2 class="item-top">商品詳細</h2>
+		<c:if test="${stockMessage != null}" >
+			<div class="alert alert-danger" role="alert">${stockMessage}</div>
+		</c:if>
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="itemDetail-photo">

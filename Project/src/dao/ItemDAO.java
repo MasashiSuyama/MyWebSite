@@ -250,7 +250,7 @@ public class ItemDAO {
 	/**
      * idが一致する商品情報を全て返す
      */
-    public ItemDataBeans findItemInfo(int id) throws SQLException{
+    public static ItemDataBeans findItemInfo(int id) throws SQLException{
         Connection con = null;
         try {
             // データベースへ接続
@@ -326,6 +326,34 @@ public class ItemDAO {
 				con.close();
 			}
 		}
+    }
+
+    /**
+     * idの一致する商品の在庫数・総販売個数を更新する
+     */
+    public void productCountUpdate(int id, int buyCount) throws SQLException {
+
+    	Connection con = null;
+        try {
+            // データベースへ接続
+            con = DBManager.getConnection();
+
+            //INSERT文を準備
+            String sql = "UPDATE item SET stock = ?, buy_sum = ? WHERE id = ?";
+            // INSERTを実行
+            PreparedStatement pStmt = con.prepareStatement(sql);
+            pStmt.setInt(1, ItemDAO.findItemInfo(id).getStock() - buyCount);
+            pStmt.setInt(2, ItemDAO.findItemInfo(id).getBuySum() + buyCount);
+            pStmt.setInt(3, id);
+            pStmt.executeUpdate();
+
+        } catch (SQLException e) {
+			throw new SQLException(e);
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+        }
     }
 
     /**

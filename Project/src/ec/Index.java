@@ -41,6 +41,8 @@ public class Index extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
+			session.setAttribute("errorMessage", e.toString());
+			response.sendRedirect("Error");
 		}
 	}
 

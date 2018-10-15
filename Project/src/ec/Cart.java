@@ -36,11 +36,19 @@ public class Cart extends HttpServlet {
 				request.setAttribute("cartActionMessage", "カートに商品がありません");
 			}
 
+			//発送到着予定日をリクエストスコープにセット(2～15日後)
+			String arrivalDateStart = EcHelper.getDateLate(2);
+			String arrivalDateEnd = EcHelper.getDateLate(15);
+			request.setAttribute("arrivalDateStart", arrivalDateStart);
+			request.setAttribute("arrivalDateEnd", arrivalDateEnd);
+
 			// 買い物かごのjspにフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/cart.jsp");
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
+			session.setAttribute("errorMessage", e.toString());
+			response.sendRedirect("Error");
 		}
 	}
 

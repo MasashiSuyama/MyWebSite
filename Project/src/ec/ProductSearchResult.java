@@ -24,11 +24,12 @@ public class ProductSearchResult extends HttpServlet {
 		// 文字化け対策
 		request.setCharacterEncoding("UTF-8");
 
+		HttpSession session = request.getSession();
+
 		try {
 			//表示ページ番号 未指定の場合 1ページ目を表示
 			int pageNum = Integer.parseInt(request.getParameter("page_num") == null ? "1" : request.getParameter("page_num"));
 
-			HttpSession session = request.getSession();
 			//リクエストパラメータの入力項目を取得
 			String searchProductName = request.getParameter("search_productName") == null ? "" : request.getParameter("search_productName");
 			String lowProductCost = request.getParameter("low_productCost")  == null ? "" : request.getParameter("low_productCost");
@@ -78,6 +79,8 @@ public class ProductSearchResult extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			session.setAttribute("errorMessage", e.toString());
+			response.sendRedirect("Error");
 		}
 
 	}

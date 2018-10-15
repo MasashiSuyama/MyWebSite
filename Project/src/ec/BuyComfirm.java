@@ -21,20 +21,43 @@ import beans.ItemDataBeans;
 public class BuyComfirm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 文字化け対策
 		request.setCharacterEncoding("UTF-8");
 
 		HttpSession session = request.getSession();
 
 		try {
-			//カートを取得
-			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) session.getAttribute("cart");
-
 			// URLからGETパラメータとしてID・購入個数・発送到着日時を受け取る
 			String[] buyCount_str = request.getParameterValues("buy_count");
 			String[] deleteItem_str = request.getParameterValues("delete_item");
 			String arrivalDate = request.getParameter("arrival_date");
+
+			// ログインセッションがない場合、ログイン画面にリダイレクトさせる
+			Boolean login =(Boolean) session.getAttribute("isLogin");
+			if(!(login == true) ) {
+				String parameterStr ="";
+				// セッションにリターンページ情報を書き込む
+				for(int i = 0; i < buyCount_str.length ;i++) {
+					parameterStr += "&buy_count=" + buyCount_str[i];
+				}
+				if(deleteItem_str != null) {
+					for(int i = 0; i < deleteItem_str.length ;i++) {
+						parameterStr += "&delete_item=" + deleteItem_str[i];
+					}
+				}
+				parameterStr += "&arrival_date=" + arrivalDate;
+
+				String urlStr = "BuyComfirm" + parameterStr.replaceFirst("&", "?");
+
+				session.setAttribute("returnStrUrl", urlStr);
+				// ログイン画面にリダイレクト
+				response.sendRedirect("Login");
+				return;
+			}
+
+			//カートを取得
+			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) session.getAttribute("cart");
 
 			//全アイテム削除チェックされていたらアイテムを全削除しカート画面に戻る
 			if(deleteItem_str != null && buyCount_str.length == deleteItem_str.length) {
@@ -85,7 +108,7 @@ public class BuyComfirm extends HttpServlet {
 
 				//カート情報更新
 				session.setAttribute("cart", cart);
-				session.setAttribute("arrivalDate", arrivalDate);
+				session.setAttribute("arrivalDate", EcHelper.getDateStr(arrivalDate));
 				session.setAttribute("subtotalMoney", subtotalMoney);
 				session.setAttribute("deliveryPrice", deliveryPrice);
 				session.setAttribute("totalMoney", totalMoney);
@@ -96,6 +119,8 @@ public class BuyComfirm extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			session.setAttribute("errorMessage", e.toString());
+			response.sendRedirect("Error");
 		}
 
 	}

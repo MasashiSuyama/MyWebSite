@@ -17,7 +17,10 @@
 		<c:if test="${cartActionMessage != null}" >
 			<div class="alert alert-danger" role="alert">${cartActionMessage}</div>
 		</c:if>
-		<form action="BuyComfirm" method="post">
+		<c:if test="${buyErrMessage != null}" >
+			<div class="alert alert-danger" role="alert"><b>${buyErrMessage}</b></div>
+		</c:if>
+		<form action="BuyComfirm">
 			<table class="table table-secondary buyConfirm-table" align="center">
 				<thead>
 					<tr>
@@ -57,7 +60,8 @@
 						<tr>
 							<td>日時指定配送</td>
 							<td>
-								<input type="date" name="arrival_date" value="2000-01-01" min="2000-01-01" max="2000-01-14"></input>
+								<input type="date" name="arrival_date" value="${arrivalDateStart}" min="${arrivalDateStart}"
+									max="${arrivalDateEnd}" required></input>
 							</td>
 							<td>200円 (5000円以上で無料)</td>
 						</tr>

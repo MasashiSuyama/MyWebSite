@@ -1,6 +1,7 @@
 package ec;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.http.HttpSession;
@@ -27,4 +28,39 @@ public class EcHelper {
 		return dateStr;
 	}
 
+	/**
+	 * 今日の日付から得た値日数後をStirng型で返す(yyyy-MM-dd)
+	 */
+	public static String getDateLate(int date) {
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DATE, date);
+
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH) + 1;
+		int day = cal.get(Calendar.DATE);
+
+		String dateLate = year +"-"+ month +"-"+ day;
+
+		return dateLate;
+	}
+
+	/**
+	 * 日付(String型:yyyy-MM-dd)表示を日付(String型:yyyy年MM月dd日)にして返す
+	 */
+	public static String getDateStr(String date) {
+		String date1 = date.replaceFirst("-", "年");
+		String date2 = date1.replaceFirst("-", "月");
+		String dateStr = date2 +"日";
+		return dateStr;
+	}
+
+	/**
+	 * 日付(String型:yyyy年MM月dd日)表示を日付(String型:yyyy-MM-dd)にして返す
+	 */
+	public static String getDate(String dateStr) {
+		String dateStr1 = dateStr.replaceFirst("年", "-");
+		String dateStr2 = dateStr1.replaceFirst("月", "-");
+		String date = dateStr2.replaceFirst("日", "");
+		return date;
+	}
 }

@@ -29,14 +29,11 @@ public class UserUpdateResult extends HttpServlet {
 			String id_str = request.getParameter("id");
 			int id = Integer.parseInt(id_str);
 
-
-			// idの一致するユーザまたは管理者としてログインセッションがない場合、ログイン画面にリダイレクトさせる
+			// idの一致するユーザまたは管理者としてログインセッションがない場合、エラー画面にリダイレクトさせる
 			UserDataBeans loginUdb =(UserDataBeans)session.getAttribute("userInfo");
 			if(loginUdb == null || !(loginUdb.getLoginId().equals("admin") || loginUdb.getId() == id) ) {
-				// セッションにリターンページ情報を書き込む
-				session.setAttribute("returnStrUrl", "UserUpdateResult");
 				// ログイン画面にリダイレクト
-				response.sendRedirect("Login");
+				response.sendRedirect("Error");
 				return;
 			}
 
@@ -106,8 +103,8 @@ public class UserUpdateResult extends HttpServlet {
 			//ユーザ情報をリクエストスコープにセット
 			request.setAttribute("userData", udb);
 
-			//ユーザ情報ページへフォワード
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user.jsp");
+			//ユーザ詳細のサーブレットへフォワード
+			RequestDispatcher dispatcher = request.getRequestDispatcher("UserData");
 			dispatcher.forward(request, response);
 
 		}  catch (Exception e) {

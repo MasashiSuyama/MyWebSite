@@ -34,7 +34,6 @@ public class NewUserResult extends HttpServlet {
 			UserDAO userDAO = new UserDAO();
 			boolean loginIdCheck = userDAO.newUser(loginId);
 
-
 			/** 登録できない場合 **/
 			if (loginId.equals("") || password.equals("") || passwordCheck.equals("") || userName.equals("") || birthday.equals("")) {
 				// リクエストスコープにエラーメッセージをセット
