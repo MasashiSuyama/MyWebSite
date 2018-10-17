@@ -24,9 +24,9 @@
 					<table class="table table-light allergy-table text-center">
 						<thead>
 							<tr>
-								<th scope="col">卵</th>
-								<th scope="col">小麦</th>
-								<th scope="col">乳</th>
+								<th scope="col" width="15%">卵</th>
+								<th scope="col" width="15%">小麦</th>
+								<th scope="col" width="15%">乳</th>
 								<th scope="col">その他</th>
 							</tr>
 						</thead>
@@ -43,10 +43,7 @@
 									<c:if test="${itemData.allergyMilk}">●</c:if>
 									<c:if test="${!(itemData.allergyMilk)}">－</c:if>
 								</td>
-								<td>
-									<c:if test="${itemData.allergyOther == &quot;&quot;}">なし</c:if>
-									<c:if test="${!(itemData.allergyOther == &quot;&quot;)}">${itemData.allergyOther}</c:if>
-								</td>
+								<td>${itemData.allergyOther}</td>
 							</tr>
 						</tbody>
 					</table>

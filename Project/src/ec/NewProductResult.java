@@ -29,14 +29,37 @@ public class NewProductResult extends HttpServlet {
 			boolean eggAllergy = request.getParameter("eggAllergy") == null ? false : request.getParameter("eggAllergy").equals("egg");
 			boolean wheatAllergy = request.getParameter("wheatAllergy") == null ? false : request.getParameter("wheatAllergy").equals("wheat");
 			boolean milkAllergy = request.getParameter("milkAllergy") == null ? false : request.getParameter("milkAllergy").equals("milk");
-			String allergyOther = request.getParameter("allergyOther");
+			String allergyOther = request.getParameter("allergyOther")  == "" ? "なし" : request.getParameter("allergyOther");
 			String priceStr = request.getParameter("price");
 			String stockStr = request.getParameter("stock");
 
+			// 同名の商品名が既に登録されているか(false:登録済み)
+			ItemDAO itemDAO = new ItemDAO();
+			boolean productNameCheck = itemDAO.newProduct(name);
+
 			/** 登録できない場合 **/
+			boolean newProductErr = false ;
 			if ( name.equals("") || priceStr.equals("") || stockStr.equals("") ) {
 				// リクエストスコープにエラーメッセージをセット
 				request.setAttribute("newProductErrMsg", "入力されていない項目があります");
+				newProductErr = true;
+
+			} else if(productNameCheck == false) {
+				// リクエストスコープにエラーメッセージをセット
+				request.setAttribute("newProductErrMsg", "既に同じ商品名で登録されています");
+				newProductErr = true;
+			}
+
+			if(newProductErr == true) {
+				// リクエストスコープに入力内容をセット
+				request.setAttribute("name", name);
+				request.setAttribute("detail", detail);
+				request.setAttribute("eggAllergy", eggAllergy);
+				request.setAttribute("wheatAllergy", wheatAllergy);
+				request.setAttribute("milkAllergy", milkAllergy);
+				request.setAttribute("allergyOther", allergyOther);
+				request.setAttribute("price", priceStr);
+				request.setAttribute("stock", stockStr);
 
 				// 商品マスタ新規登録jspにフォワード
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/newProduct.jsp");
@@ -47,6 +70,11 @@ public class NewProductResult extends HttpServlet {
 			/** 登録できる場合 **/
 			int price = Integer.parseInt(priceStr);
 			int stock = Integer.parseInt(stockStr);
+
+			//写真が登録されてない場合
+			if(photo.equals("")) {
+				photo = "null.png";
+			}
 
 			// ユーザ情報を登録
 			ItemDAO itemDao = new ItemDAO();

@@ -65,7 +65,7 @@
 					<a href="ItemData?id=${item.id}" class="item-topage">
 						<div class="itemSeaechResult-photo">
 							<img src="image/${item.fileName}" alt="" width="300" height="240">
-							<h4 class="text-center">${item.name}</h4>
+							<h4 class="text-center search-item-name">${item.name}</h4>
 							<h5 class="popularityItem-price text-center"><b>${item.price}円</b></h5>
 						</div>
 					</a>
@@ -84,15 +84,15 @@
 					</c:if>
 					<c:if test="${!(pageNum == 1)}">
 						<li class="page-item">
-							<a class="page-link" href="ProductList"><<</a>
+							<a class="page-link" href="ItemSearchResult"><<</a>
 						</li>
 					</c:if>
 
 					<c:if test="${pageNum == pageMax && pageMax >= 3}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum - 2}">${pageNum - 2}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum - 2}">${pageNum - 2}</a></li>
 					</c:if>
 					<c:if test="${!(pageNum == 1)}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum - 1}">${pageNum - 1}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum - 1}">${pageNum - 1}</a></li>
 					</c:if>
 
 					<li class="page-item active">
@@ -100,10 +100,10 @@
 					</li>
 
 					<c:if test="${!(pageNum == pageMax) && !(itemCount == 0)}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum + 1}">${pageNum + 1}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum + 1}">${pageNum + 1}</a></li>
 					</c:if>
 					<c:if test="${pageNum == 1 &&  pageMax >= 3}">
-						<li class="page-item"><a class="page-link" href="ProductList?page_num=${pageNum + 2}">${pageNum + 2}</a></li>
+						<li class="page-item"><a class="page-link" href="ItemSearchResult?page_num=${pageNum + 2}">${pageNum + 2}</a></li>
 					</c:if>
 
 					<c:if test="${pageNum == pageMax || itemCount == 0}">
@@ -113,7 +113,7 @@
 					</c:if>
 					<c:if test="${!(pageNum == pageMax) && !(itemCount == 0)}">
 						<li class="page-item">
-							<a class="page-link" href="ProductList?page_num=${pageMax}">>></a>
+							<a class="page-link" href="ItemSearchResult?page_num=${pageMax}">>></a>
 						</li>
 					</c:if>
 				</ul>

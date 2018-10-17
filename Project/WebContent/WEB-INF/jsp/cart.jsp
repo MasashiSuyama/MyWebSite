@@ -24,7 +24,7 @@
 			<table class="table table-secondary buyConfirm-table" align="center">
 				<thead>
 					<tr>
-						<th scope="col">商品名</th>
+						<th scope="col" width="40%">商品名</th>
 						<th scope="col">個数</th>
 						<th scope="col">単価</th>
 						<th scope="col" width="10%">削除</th>

@@ -27,8 +27,6 @@ public class Admin extends HttpServlet {
 		// 管理者としてログインセッションがない場合、ログイン画面にリダイレクトさせる
 		UserDataBeans udb =(UserDataBeans)session.getAttribute("userInfo");
 		if(udb == null || !(udb.getLoginId().equals("admin")) ) {
-			// セッションにリターンページ情報を書き込む
-			session.setAttribute("returnStrUrl", "Admin");
 			// ログイン画面にリダイレクト
 			response.sendRedirect("Login");
 			return;

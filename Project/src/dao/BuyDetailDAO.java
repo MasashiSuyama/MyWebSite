@@ -39,6 +39,23 @@ public class BuyDetailDAO {
 				buyDetailItemList.add(idb);
 			}
 
+			st = con.prepareStatement(
+					"SELECT item_delete.item_id, item_delete.name, item_delete.price, buy_detail.buy_count"
+					+ " FROM buy_detail JOIN item_delete ON buy_detail.item_id = item_delete.item_id"
+					+ " WHERE buy_detail.buy_id = ?");
+			st.setInt(1, buyId);
+
+			ResultSet rs2 = st.executeQuery();
+
+			while (rs2.next()) {
+				ItemDataBeans idb = new ItemDataBeans();
+				idb.setId(rs2.getInt("item_id"));
+				idb.setName(rs2.getString("name"));
+				idb.setPrice(rs2.getInt("price"));
+				idb.setBuyCount(rs2.getInt("buy_count"));
+				buyDetailItemList.add(idb);
+			}
+
 			return buyDetailItemList;
 		} catch (SQLException e) {
 			throw new SQLException(e);

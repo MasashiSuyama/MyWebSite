@@ -36,7 +36,7 @@
 				<table class="table table-secondary text-center">
 					<thead>
 						<tr>
-							<th scope="col">商品名</th>
+							<th scope="col" width="50%">商品名</th>
 							<th scope="col">単価</th>
 							<th scope="col">個数</th>
 							<th scope="col">小計</th>
@@ -55,7 +55,7 @@
 
 					<tbody>
 						<tr>
-							<td colspan="3" class="text-center">日付指定配達</td>
+							<td colspan="3" class="text-center">日時指定配達</td>
 							<td>${deliveryPrice}</td>
 						</tr>
 					</tbody>

@@ -99,7 +99,7 @@ public class BuyComfirm extends HttpServlet {
 				for(int i = 0 ; i < subtotalMoney.size() ; i++) {
 					totalMoney += subtotalMoney.get(i);
 				}
-				if(totalMoney <= 5000) {
+				if(totalMoney < 5000) {
 					totalMoney += 200;
 					deliveryPrice = "200円";
 				} else {

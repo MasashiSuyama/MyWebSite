@@ -32,8 +32,8 @@ public class ProductUpdate extends HttpServlet {
 			ItemDAO itemDao = new ItemDAO();
 			ItemDataBeans idb = itemDao.findItemInfo(id);
 
-			//ユーザ情報をリクエストスコープにセット
-			request.setAttribute("productInfo", idb);
+			//商品情報をリクエストスコープにセット
+			request.setAttribute("productUpdate", idb);
 
 			// 商品マスタ更新ページのjspにフォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/productUpdate.jsp");

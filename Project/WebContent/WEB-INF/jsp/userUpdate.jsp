@@ -24,7 +24,7 @@
 				</div>
 				<div class="form-group row">
 					<label for="userName" class="col-sm-7 text-center"><b>ユーザ名</b></label>
-					<input type="text" name="userName" class="form-control col-sm-4" id="userName" value="${userUpdate.name}">
+					<input type="text" name="userName" class="form-control col-sm-4" id="userName" value="${userUpdate.name}" maxlength="20">
 				</div>
 				<div class="form-group row">
 					<label for="birthdate" class="col-sm-7 text-center"><b>生年月日</b></label>
@@ -32,11 +32,11 @@
 				</div>
 				<div class="form-group row">
 					<label for="password" class="col-sm-7 text-center"><b>パスワード</b></label>
-					<input type="text" name="password" class="form-control col-sm-4" id="password">
+					<input type="text" name="password" class="form-control col-sm-4" id="password" pattern="^[0-9A-Za-z]+$" placeholder="半角英数のみ">
 				</div>
 				<div class="form-group row">
 					<label for="passwordCheck" class="col-sm-7 text-center"><b>パスワード(確認)</b></label>
-					<input type="password" name="passwordCheck" class="form-control col-sm-4" id="passwordCheck">
+					<input type="password" name="passwordCheck" class="form-control col-sm-4" id="passwordCheck" pattern="^[0-9A-Za-z]+$">
 				</div>
 			</div>
 			<div class="userUpdate-position">

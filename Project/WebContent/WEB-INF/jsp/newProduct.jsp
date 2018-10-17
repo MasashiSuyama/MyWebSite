@@ -18,45 +18,48 @@
 			<div class="newUser-input-area">
 				<div class="form-group row">
 					<label for="product" class="col-sm-4 text-center">商品名</label>
-					<input type="text" name="name" class="form-control col-sm-7" id="product">
+					<input type="text" name="name" class="form-control col-sm-7" id="product" value="${name}">
 				</div>
 				<div class="form-group row">
 					<label for="productDetail" class="col-sm-4 text-center">詳細</label>
-					<textarea name="detail" class="form-control col-sm-7" id="productDetail" rows="4"></textarea>
+					<textarea name="detail" class="form-control col-sm-7" id="productDetail" rows="4">${detail}</textarea>
 				</div>
 				<div class="form-group row">
 					<label for="photo" class="col-sm-4 text-center">画像</label>
-					<input type="file" name="photo" class="form-control col-sm-7" accept="image/*" id="photo">
+					<input type="file" name="photo" class="form-control col-sm-7" accept="image/*" id="photo" value="${photo}">
 				</div>
 				<div class="form-group row">
 					<div class="col-sm-4 text-center">
 						<label for="productDetail">アレルギー項目</label>
 					</div>
 					<div class="col-sm-2 text-center">
-						<input class="form-check-input" type="checkbox" name="eggAllergy" id="eggAllergy" value="egg">
+						<input class="form-check-input" type="checkbox" name="eggAllergy" id="eggAllergy" value="egg"
+							<c:if test="${eggAllergy}"> checked </c:if> >
 						<label class="form-check-label" for="eggAllergy">卵</label>
 					</div>
 					<div class="col-sm-2 text-center">
-						<input class="form-check-input" type="checkbox" name="wheatAllergy" id="wheatAllergy" value="wheat">
+						<input class="form-check-input" type="checkbox" name="wheatAllergy" id="wheatAllergy" value="wheat"
+							<c:if test="${wheatAllergy}"> checked </c:if> >
 						<label class="form-check-label" for="wheatAllergy">小麦</label>
 					</div>
 					<div class="col-sm-2 text-center">
-						<input class="form-check-input" type="checkbox" name="milkAllergy" id="milkAllergy" value="milk">
+						<input class="form-check-input" type="checkbox" name="milkAllergy" id="milkAllergy" value="milk"
+							<c:if test="${milkAllergy}"> checked </c:if> >
 						<label class="form-check-label" for="milkAllergy">乳</label>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="Allergy" class="col-sm-4 text-center">その他アレルギー記入欄</label>
-					<input type="text" name="allergyOther" class="form-control col-sm-7" id="Allergy">
+					<input type="text" name="allergyOther" class="form-control col-sm-7" id="Allergy" value="${allergyOther}">
 				</div>
 				<div class="form-group row">
 					<label for="price" class="col-sm-4 text-center">単価</label>
-					<input type="text" name="price" class="form-control col-sm-3" id="price">
+					<input type="number" name="price" class="form-control col-sm-3" id="price" min="0" value="${price}">
 					<p class="col-sm-1 text-center">円</p>
 				</div>
 				<div class="form-group row">
 					<label for="productNumbers" class="col-sm-4 text-center">販売個数</label>
-					<input type="text" name="stock" class="form-control col-sm-3" id="productNumbers">
+					<input type="number" name="stock" class="form-control col-sm-3" id="productNumbers" min="0" value="${stock}">
 					<p class="col-sm-1 text-center">個</p>
 				</div>
 			</div>

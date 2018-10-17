@@ -14,7 +14,7 @@
 		<table class="table table-secondary buyConfirm-table" align="center">
 			<thead>
 				<tr>
-					<th scope="col">商品名</th>
+					<th scope="col" width="50%">商品名</th>
 					<th scope="col">単価</th>
 					<th scope="col">個数</th>
 					<th scope="col">小計</th>
@@ -32,7 +32,7 @@
 			</c:forEach>
 			<tbody>
 				<tr>
-					<td>普通配送</td>
+					<td>日時指定配送</td>
 					<td></td>
 					<td></td>
 					<td>${deliveryPrice}</td>

@@ -292,6 +292,77 @@ public class ItemDAO {
     }
 
     /**
+     * 削除する商品情報を削除済み商品に登録する
+     */
+    public void insertDeleteItem(ItemDataBeans idb) throws SQLException {
+    	Connection con = null;
+        try {
+            // データベースへ接続
+            con = DBManager.getConnection();
+
+            //INSERT文を準備
+            String sql = "insert into item_delete(item_id, name, detail, file_name, allergy_egg, allergy_wheat, allergy_milk, allergy_other, price, stock, buy_sum) "
+            		+ "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            // INSERTを実行
+            PreparedStatement pStmt = con.prepareStatement(sql);
+            pStmt.setInt(1, idb.getId());
+            pStmt.setString(2, idb.getName());
+            pStmt.setString(3, idb.getDetail());
+            pStmt.setString(4, idb.getFileName());
+            pStmt.setBoolean(5, idb.getAllergyEgg());
+            pStmt.setBoolean(6, idb.getAllergyWheat());
+            pStmt.setBoolean(7, idb.getAllergyMilk());
+            pStmt.setString(8, idb.getAllergyOther());
+            pStmt.setInt(9, idb.getPrice());
+            pStmt.setInt(10, idb.getStock());
+            pStmt.setInt(11, idb.getBuySum());
+
+            pStmt.executeUpdate();
+
+        } catch (SQLException e) {
+			throw new SQLException(e);
+		} finally {
+			if (con != null) {
+				con.close();
+			}
+		}
+    }
+
+    /**
+     * 同じ商品名ですでに登録されているかをbooleanで返す (true:未登録 false:登録済み)
+     */
+    public boolean newProduct(String productName) throws SQLException {
+    	 Connection con = null;
+         try {
+        	 // データベースへ接続
+             con = DBManager.getConnection();
+
+             // SELECT文を準備
+             String sql = "SELECT * FROM item WHERE name = ?";
+
+             // SELECTを実行し、結果表を取得
+             PreparedStatement pStmt = con.prepareStatement(sql);
+             pStmt.setString(1, productName);
+             ResultSet rs = pStmt.executeQuery();
+
+             // レコードが０件の場合未登録
+             if (!rs.next()) {
+                 return true;
+             }
+             return false;
+
+         } catch (Exception e) {
+ 			throw new SQLException(e);
+ 		} finally {
+ 			if (con != null) {
+ 				con.close();
+ 			}
+ 		}
+    }
+
+
+    /**
      * 商品情報を登録する
      */
     public void newProduct(String name, String detail, String photo,
@@ -360,7 +431,7 @@ public class ItemDAO {
      * 商品情報を更新する
      */
     public void productUpdate(int id, String name, String detail, String photo,boolean eggAllergy,
-    		boolean wheatAllergy, boolean milkAllergy, String allergyOther, int price, int stock, int sellAddNum) throws SQLException {
+    		boolean wheatAllergy, boolean milkAllergy, String allergyOther, int stock, int sellAddNum) throws SQLException {
 
     	Connection con = null;
         try {
@@ -369,7 +440,7 @@ public class ItemDAO {
 
             //INSERT文を準備
             String sql = "UPDATE item SET name = ?, detail = ?, file_name = ?, allergy_egg = ?, allergy_wheat = ?"
-            		+ ", allergy_milk = ?, allergy_other = ?, price = ?, stock = ? WHERE id = ?";
+            		+ ", allergy_milk = ?, allergy_other = ?, stock = ? WHERE id = ?";
             // INSERTを実行
             PreparedStatement pStmt = con.prepareStatement(sql);
             pStmt.setString(1, name);
@@ -379,9 +450,8 @@ public class ItemDAO {
             pStmt.setBoolean(5, wheatAllergy);
             pStmt.setBoolean(6, milkAllergy);
             pStmt.setString(7, allergyOther);
-            pStmt.setInt(8, price);
-            pStmt.setInt(9, (stock + sellAddNum) );
-            pStmt.setInt(10, id);
+            pStmt.setInt(8, (stock + sellAddNum) );
+            pStmt.setInt(9, id);
             pStmt.executeUpdate();
 
         } catch (SQLException e) {

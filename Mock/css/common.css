@@ -185,6 +185,13 @@ body {
 	margin-top: 30px;
 	text-align: center;
 }
+.item-name {
+	text-overflow: ellipsis;
+	overflow : hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+}
 a.item-topage {
 	color: #202020;
 }

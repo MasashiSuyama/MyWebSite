@@ -37,9 +37,21 @@ public class EcHelper {
 
 		int year = cal.get(Calendar.YEAR);
 		int month = cal.get(Calendar.MONTH) + 1;
+		String monthStr = "";
+		if(month >= 10) {
+			monthStr = String.valueOf(month);
+		} else {
+			monthStr = "0" + String.valueOf(month);
+		}
 		int day = cal.get(Calendar.DATE);
+		String dayStr = "";
+		if(day >= 10) {
+			dayStr = String.valueOf(day);
+		} else {
+			dayStr = "0" + String.valueOf(day);
+		}
 
-		String dateLate = year +"-"+ month +"-"+ day;
+		String dateLate = year +"-"+ monthStr +"-"+ dayStr;
 
 		return dateLate;
 	}

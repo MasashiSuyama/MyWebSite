@@ -42,9 +42,9 @@
 				<table class="table text-center">
 					<thead>
 						<tr>
-							<th scope="col" width="35%">商品名</th>
-							<th scope="col" width="20%">価格</th>
-							<th scope="col" width="20%">在庫数</th>
+							<th scope="col" width="45%">商品名</th>
+							<th scope="col" width="15%">価格</th>
+							<th scope="col" width="15%">在庫数</th>
 							<th scope="col" width="25%"></th>
 						</tr>
 					</thead>

@@ -33,7 +33,7 @@
 							<h5 class="popularityItem-price text-center"><b>${item.price}円</b></h5>
 						</div>
 						<div>
-							<h4 class="text-center">${item.name}</h4>
+							<h4 class="text-center item-name">${item.name}</h4>
 						</div>
 					</a>
 				</div>
@@ -50,10 +50,10 @@
 				</div>
 				<div class="form-group row">
 					<label for="cost" class="col-sm-2 text-center">価格</label>
-					<input type="text" name="low_itemPrice" class="form-control col-sm-3" id="cost">
+					<input type="number" name="low_itemPrice" class="form-control col-sm-3" id="cost" min="0">
 					<p class="col-sm-1 text-right">円</p>
 					<p class="col-sm-1">～</p>
-					<input type="text" name="high_itemPrice" class="form-control col-sm-3" id="cost">
+					<input type="number" name="high_itemPrice" class="form-control col-sm-3" id="cost" min="0">
 					<p class="col-sm-1 text-right">円</p>
 				</div>
 				<div class="search-position">
@@ -74,7 +74,7 @@
 							<h6 class="recommendedItem-price text-center"><b>${item.price}円</b></h6>
 						</div>
 						<div>
-							<h5 class="text-center">${item.name}</h5>
+							<h5 class="text-center item-name">${item.name}</h5>
 						</div>
 					</a>
 					</div>

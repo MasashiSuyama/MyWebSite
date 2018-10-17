@@ -47,12 +47,7 @@
 			<div class="col-sm-7 text-center">
 				<p><b>その他アレルギー情報</b></p>
 			</div>
-			<c:if test="${productData.allergyOther == &quot;&quot;}">
-				<div class="col-sm-5"><p>なし</p></div>
-			</c:if>
-			<c:if test="${!(productData.allergyOther == &quot;&quot;)}">
-				<div class="col-sm-5"><p>${productData.allergyOther}</p></div>
-			</c:if>
+			<div class="col-sm-5"><p>${productData.allergyOther}</p></div>
 		</div>
 		<div class="row">
 			<div class="col-sm-7 text-center">

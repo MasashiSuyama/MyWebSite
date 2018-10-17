@@ -319,12 +319,12 @@ public class UserDAO {
              // SELECT文を準備
              String sql = "SELECT * FROM user WHERE login_id = ?";
 
-              // SELECTを実行し、結果表を取得
+             // SELECTを実行し、結果表を取得
              PreparedStatement pStmt = con.prepareStatement(sql);
              pStmt.setString(1, loginId);
              ResultSet rs = pStmt.executeQuery();
 
-              // 主キーに紐づくレコードは1件のみなので、rs.next()は1回だけ行う
+              // レコードが０件の場合未登録
              if (!rs.next()) {
                  return true;
              }

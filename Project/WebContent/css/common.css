@@ -136,10 +136,10 @@ body {
 	text-align: center;
 }
 .cartItem-select-number {
-	width: 70px; 
+	width: 70px;
 }
 .delivery-select {
-	width: 120px; 
+	width: 120px;
 }
 .deliveryDate {
 	width: 200px;
@@ -185,6 +185,13 @@ body {
 	margin-top: 30px;
 	text-align: center;
 }
+.item-name {
+	text-overflow: ellipsis;
+	overflow : hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+}
 a.item-topage {
 	color: #202020;
 }
@@ -197,7 +204,7 @@ a.item-topage {
 }
 .popularityItem-photo {
 	float: left;
-	margin-right: 10px; 
+	margin-right: 10px;
 }
 .popularityItem-price{
 	margin-top: 3px;
@@ -215,7 +222,7 @@ a.item-topage {
 }
 .recommendedItem-photo {
 	float: left;
-	margin-right: 8px; 
+	margin-right: 8px;
 }
 .recommendedItem-price {
 	margin-top: 2px;
@@ -264,16 +271,16 @@ a.item-topage {
 .item-select-number {
 	width: 70px;
 }
-.item-top {	
+.item-top {
 	text-align: center;
 	margin: 20px 0 40px 0;
 }
 .itemDetail-name {
-	margin: 5px 0 10px 0;
+	margin: 5px 0 20px 0;
 }
 .itemDetail-photo {
 	text-align: center;
-	margin-bottom: 50px; 
+	margin-bottom: 50px;
 }
 .itemDetail-price {
 	margin-top: 50px;
@@ -293,6 +300,13 @@ a.item-topage {
 .itemSeaechResult-top {
 	margin: 30px 0 20px 0;
 	text-align: center;
+}
+.search-item-name {
+	text-overflow: ellipsis;
+	overflow : hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
 }
 
 /* login.html*/
@@ -517,4 +531,3 @@ hr.userList-line {
 	text-align: center;
 	margin: 20px 0 20px 0;
 }
-	

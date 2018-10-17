@@ -40,9 +40,9 @@
 				<table class="table text-center">
 					<thead>
 						<tr>
-							<th scope="col">ログインID</th>
-							<th scope="col">ユーザ名</th>
-							<th scope="col">生年月日</th>
+							<th scope="col" width="20%">ログインID</th>
+							<th scope="col" width="30%">ユーザ名</th>
+							<th scope="col" width="25%">生年月日</th>
 							<th scope="col" width="25%"></th>
 						</tr>
 					</thead>
@@ -51,7 +51,7 @@
 						<tr>
 							<th scope="row">${user.loginId}</th>
 							<td>${user.name}</td>
-							<td>${user.birthDate}</td>
+							<td>${user.birthDateStr}</td>
 							<td>
 								<div class="row">
 									<a href="UserUpdate?id=${user.id}">

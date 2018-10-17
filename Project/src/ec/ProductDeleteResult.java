@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.ItemDataBeans;
 import dao.ItemDAO;
 
 @WebServlet("/ProductDeleteResult")
@@ -23,8 +24,12 @@ public class ProductDeleteResult extends HttpServlet {
 			String id_str = request.getParameter("id");
 			int id = Integer.parseInt(id_str);
 
-			//idを引数にして、idに紐づく商品情報を削除する
+			// idを引数にして、idに紐づく商品情報を削除済み商品データーベースに保存する
 			ItemDAO itemDao = new ItemDAO();
+			ItemDataBeans idb = (ItemDataBeans) itemDao. findItemInfo(id);
+			itemDao.insertDeleteItem(idb);
+
+			// idを引数にして、idに紐づく商品情報を削除する
 			itemDao.deleteItem(id);
 
 			// 商品マスタ一覧のサーブレットにリダイレクト
