@@ -9,7 +9,7 @@
 </head>
 <body>
 	<jsp:include page="/baselayout/header.jsp"/>
-	<h1 class="index-top">～　CAKE&nbspSHOP&nbspへようこそ　～</h1>>
+	<h1 class="index-top">～　CAKE&nbspSHOP&nbspへようこそ　～</h1>
 	<c:if test="${logoutMsg != null}" >
 			<div class="alert alert-success" role="alert">${logoutMsg}</div>
 		</c:if>
